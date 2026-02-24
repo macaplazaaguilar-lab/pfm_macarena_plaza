@@ -1,0 +1,163 @@
+
+\documentclass[12pt]{book}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+     %               Paquetes y librerias                            %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,latexsym,mathrsfs,pdfsync,color,graphicx}
+\usepackage[english,spanish,es-noquoting]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{changepage}
+
+\geometry{bindingoffset=2cm}
+\geometry{textwidth=390pt}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%    Definicion de entornos y numeracion de teoremas, definiciones...   %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\newtheorem{teor}{Teorema}[chapter]
+%\newtheorem{prop}[teor]{Proposición} % al ponerlo así considera que el contador es comun para los teoremas y las proposiciones
+
+%\theoremstyle{definition}
+
+%\theoremstyle{remark}
+
+
+% Declaracion de operadores
+%\DeclareMathOperator{\dive}{\textrm{div}}
+
+% Decimal con punto
+\spanishdecimal{.}
+
+
+
+
+% % % %     Portada   % % % % % % % % %
+ 
+\newcommand{\portada}[5]{
+\thispagestyle{empty}
+
+\vspace*{-2cm}
+\begin{center}
+\begin{minipage}{6cm}
+		\includegraphics[width=5cm]{portada/logo_m2i.jpg}
+	\end{minipage}\hspace{0.2cm}	
+\end{center}
+\begin{adjustwidth}{-2.5cm}{-2.5cm}
+    \begin{minipage}{2.5cm}
+    \vspace{0.5cm}		
+    \includegraphics[width=2cm]{portada/logo_ux.jpg}
+	\end{minipage} \hspace{0.2cm}
+	\begin{minipage}{3.92cm}
+		\vspace{0.5cm}
+		\includegraphics[width=3.92cm]{portada/logo_udc-eps-converted-to.pdf}
+	\end{minipage}\hspace{0.2cm}
+	\begin{minipage}{3.52cm}
+		\vspace{0.8cm}
+		\includegraphics[width=3.52cm]{portada/logo_uvigo-eps-converted-to.pdf}
+	\end{minipage}\hspace{0.2cm}
+	\begin{minipage}{4.3cm}
+		\vspace{0.15cm}
+		\includegraphics[width=4.3cm]{portada/logo_UC3M.png}
+	\end{minipage}\hspace{0.2cm}
+	\begin{minipage}{2.22cm}
+		\vspace{-0.5275cm}
+		\includegraphics[width=2.22cm]{portada/logo_UPM-eps-converted-to.pdf}
+	\end{minipage}
+\end{adjustwidth}
+
+
+\vspace{0.9cm}
+\begin{center}
+\bf
+Máster en Matemática Industrial
+
+\vspace{0.3cm}
+Curso 2025 -- 2026
+
+\vspace{2.3cm}
+\large Proyecto Fin de Máster
+
+\vspace{0.9cm}
+{\Huge{\textbf{ #1}}
+\par}
+
+\vspace{1.8cm}
+{\Large #2}
+\end{center}
+
+
+\vspace{4.8cm}
+\hspace{-1.2cm}
+\begin{minipage}{0.6\linewidth}
+\begin{tabular}{ll}
+\textbf{Fecha presentación:}  Julio 2026  \\
+\textbf{Tutor académico:} Carlos Vázquez\\
+\textbf{Empresa:}  Banco Santander  \\%[0.5cm]
+\textbf{Tutor/a empresa: }& \\
+& \includegraphics[width=0.8\textwidth]{#5}
+\end{tabular}
+\end{minipage}
+
+\enlargethispage{5cm} {\pagestyle{empty}\cleardoublepage }}
+
+
+% % %        Resumen     % % % % % % %%
+\newcommand{\resumen}[1]{
+
+\vspace*{3cm}
+\noindent {\LARGE\bfseries Resumen}\par
+\vspace*{2cm}
+
+\input{#1}
+
+\cleardoublepage }
+
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % %           Comienzo del documento                          % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\begin{document}
+\frontmatter
+
+
+% % %    Portada    % % % % % % % % % % % %
+\portada{Greeks computation by Monte Carlo techniques}{Macarena Plaza Aguilar}{}{}{portada/logo_empresa.png}
+
+% Reinicio del contador de paginas
+\setcounter{page}{1}
+
+% % % %%         Indice       % % % % % % % % % % % % % % % % %
+\tableofcontents
+
+\cleardoublepage
+
+
+% % %            Resumen   %%%%%%%%
+
+\addcontentsline{toc}{chapter}{Resumen}
+\markboth{Resumen}{ }
+\resumen{resumen/ruta_fichero_resumen.tex}
+
+
+% % % %    Cuerpo del documento       % % % %               
+\mainmatter
+%\input{main.tex}
+
+
+% % % % %      Bibliografia    % % % % % % % % % % % % 
+
+\backmatter
+\def\leftmark{ }
+\addcontentsline{toc}{chapter}{Bibliografía}
+%\bibliography{ruta_archivo_bibliografia}
+%\bibliographystyle{estilo de bibliografia}
+
+
+\end{document}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
